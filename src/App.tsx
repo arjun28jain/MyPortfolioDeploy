@@ -6,6 +6,7 @@ import { pdfjs } from 'react-pdf';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from "react";
+import { BrowserRouter as Router } from 'react-router-dom'; // Import BrowserRouter from react-router-dom
 
 pdfjs.GlobalWorkerOptions.workerSrc = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
@@ -26,10 +27,13 @@ function App() {
       '2xl': '1280',
     },
   });
+
   return (
-    <MantineProvider theme={theme} >
-    <HomePage/>
-    </MantineProvider>
+    <Router basename="/MyPortfolioDeploy"> 
+      <MantineProvider theme={theme}>
+        <HomePage/>
+      </MantineProvider>
+    </Router>
   );
 }
 
