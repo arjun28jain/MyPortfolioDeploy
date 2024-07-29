@@ -29,11 +29,13 @@ function App() {
   });
 
   return (
-    <Router basename="/MyPortfolioDeploy"> 
+    <BrowserRouter basename="/MyPortfolioDeploy"> 
+      <Routes>
       <MantineProvider theme={theme}>
-        <HomePage/>
+       <Route exact path = "/MyportfolioDeploy" element ={<HomePage/>}> </Route> 
       </MantineProvider>
-    </Router>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
